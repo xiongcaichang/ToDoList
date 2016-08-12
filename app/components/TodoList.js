@@ -27,11 +27,11 @@ class TodoList extends Component {
 
   renderRow(todo) {
     return (
-      <Todo {...todo}   onClick={this.showDetailPage.bind(this,todo)} onLongPress={this.longPress.bind(this,todo)}></Todo>
+      <Todo {...todo}   onClick={this._showDetailPage.bind(this,todo)} onLongPress={this._delete.bind(this,todo)}></Todo>
     );
   }
   
-  showDetailPage(todo) {
+  _showDetailPage(todo) {
     this.props.navigator.push({
       title: '任务详情',
       component: TodoDetail,
@@ -39,7 +39,7 @@ class TodoList extends Component {
     }) 
   }
   
-  longPress(todo){
+  _delete(todo){
     const {dispatch} = this.props
     Alert.alert(
       '是否删除此条任务？',

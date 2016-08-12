@@ -1,4 +1,4 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import { 
   View,
   AppRegistry,
@@ -73,9 +73,16 @@ export default class App extends Component {
             <TouchableOpacity 
               onPress={() => navigator.pop()}
               style={styles.button}>
-              <Image source={{uri:'../images/back@2x.png'}} style={{alignSelf: 'flex-start',marginLeft: 8}}></Image>
+              
+              <Image  source={require('../images/back.png')} style={{alignSelf: 'flex-start',marginLeft: 8}} />
             </TouchableOpacity>
           );
+        }else{
+              return  <TouchableOpacity 
+              onPress={this.showNewPage.bind(this,navigator,route)}
+              style={styles.button}>
+              <Text style={styles.buttonText}>{route.leftButtonText}</Text>
+            </TouchableOpacity>
         }
       },
       RightButton(route, navigator, index, navState) {
@@ -108,15 +115,14 @@ export default class App extends Component {
     return (
       <Navigator.NavigationBar
         style={styles.navBar}
-        routeMapper={routeMapper}
-      />
+        routeMapper={routeMapper}/>
     );
   }
 
   render() {
     return (
         <Navigator
-          initialRoute={{component:TodoList,rightButtonText:'添加'}}
+          initialRoute={{component:TodoList,rightButtonText:'添加',leftButtonText:'test'}}
           renderScene={this._renderScene.bind(this)}
           navigationBar={this._renderNavBar()}
         />

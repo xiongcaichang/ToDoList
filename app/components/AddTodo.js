@@ -24,15 +24,13 @@ import { connect } from 'react-redux'
 class AddTodo extends Component {  
   constructor(props) {
     super(props)
-    
+
     this.state = {
       
     }
   }
 
 
-
-  ComponentWill
   
   render() {
     return (
@@ -48,8 +46,7 @@ class AddTodo extends Component {
           value={this.state.text}
           placeholder='请输入任务标题...'
           returnKeyType='done'
-          ref='myInput'
-        />
+          ref='myInput'/>
         <Text style={styles.colorText}>选择颜色</Text>
         <View style={styles.colorBgView}>
         {
@@ -61,8 +58,9 @@ class AddTodo extends Component {
                 })
             }}>
             <View style={{width:100,height:100,backgroundColor: color}}></View>
+          
 
-
+    
           </TouchableHighlight>
           )
         })
@@ -71,6 +69,7 @@ class AddTodo extends Component {
         <TouchableOpacity style={styles.saveTouchableOpacity} onPress={this.save.bind(this)}>
           <Text style={styles.saveText}>保存</Text>
         </TouchableOpacity>
+
 
       </View>
  

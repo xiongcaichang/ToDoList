@@ -1,7 +1,10 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import { AppRegistry } from 'react-native'
-import { Provider } from 'react-redux'
+
+
 import { createStore } from 'redux'
+
+import { Provider } from 'react-redux'
 import App from './app/components/App'
 import todos from './app/reducers/todos'
 

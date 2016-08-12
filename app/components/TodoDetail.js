@@ -47,8 +47,7 @@ class TodoDetail extends Component {
           value={this.state.text}
           placeholder='请输入任务标题...'
           returnKeyType='done'
-          ref='myInput'
-        />
+          ref='myInput'/>
         <Text style={styles.colorText}>选择颜色</Text>
         <View style={styles.colorBgView}>
         {
@@ -112,6 +111,7 @@ const styles = StyleSheet.create({
     marginTop:20,
     marginLeft:10,
     marginRight:10,
+    paddingLeft:5,
     height:44,
     borderColor: 'rgba(220,220,220,1)',
     borderWidth:1

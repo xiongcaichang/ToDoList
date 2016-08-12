@@ -43,8 +43,7 @@ const todos = (state = [], action) => {
     state.map(
       t => {
       if (t.id !== action.id) {
-        newArray.push(t);  
-   
+        newArray.push(t);     
       }
     })
     return newArray
